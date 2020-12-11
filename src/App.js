@@ -16,7 +16,7 @@ function App() {
         password: registerPassword
       },
       withCredentials: true,
-      url: 'http://localhost:4000/register'
+      url: 'https://b-passport.herokuapp.com/register'
     })
     .then(res => console.log(res))
   }
@@ -29,7 +29,7 @@ function App() {
         password: loginPassword
       },
       withCredentials: true,
-      url: 'http://localhost:4000/login'
+      url: 'https://b-passport.herokuapp.com/ogin'
     })
     .then(res => console.log(res))
   }
@@ -38,7 +38,7 @@ function App() {
     axios({
       method: 'GET',
       withCredentials: true,
-      url: 'http://localhost:4000/getUser'
+      url: 'https://b-passport.herokuapp.com/getUser'
     })
     .then(res => console.log(res))
   }
