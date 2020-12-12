@@ -68,11 +68,6 @@ function App() {
       withCredentials: true,
       url: 'https://b-passport.herokuapp.com/user',
       // url: 'http://localhost:4000/user'
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Cache': 'no-cache'
-      }
     }).then((res) => {
       console.log(res)
       setLoggedInUser(res.data.username)
