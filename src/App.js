@@ -62,13 +62,16 @@ function App() {
     });
   };
   
-  const getUser = () => {
-    axios({
+  const getUser = async () => {
+    await axios({
       method: 'GET',
       withCredentials: true,
       url: 'https://b-passport.herokuapp.com/user'
       // url: 'http://localhost:4000/user'
-    }).then((res) => setLoggedInUser(res.data.username));
+    }).then((res) => {
+      console.log(res)
+      setLoggedInUser(res.data.username)
+    });
   }
 
 	const logout = () => {
