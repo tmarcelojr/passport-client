@@ -54,7 +54,7 @@ function App() {
       console.log(res)
       // create logic to change state to properly re-render component
       // only run if successful
-      if(res.status === 200) {
+      if (res.status === 200) {
         setLoginUsername('')
         setLoginPassword('')
         getUser()
