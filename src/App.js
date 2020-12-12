@@ -38,7 +38,7 @@ function App() {
     axios({
       method: 'GET',
       withCredentials: true,
-      url: 'https://b-passport.herokuapp.com/getUser'
+      url: 'https://b-passport.herokuapp.com/user'
     })
     .then(res => console.log(res))
   }
