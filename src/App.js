@@ -57,19 +57,20 @@ function App() {
       if (res.status === 200) {
         setLoginUsername('')
         setLoginPassword('')
-        getUser()
+        getUser(res)
       }
     });
   };
   
-  const getUser = () => {
+  const getUser = (res) => {
+    console.log('we in res', res)
     axios({
       method: 'GET',
       withCredentials: true,
       url: 'https://b-passport.herokuapp.com/user',
       // url: 'http://localhost:4000/user'
     }).then((res) => {
-      console.log(res)
+      console.log('in getUser', res)
       setLoggedInUser(res.data.username)
     });
   }
