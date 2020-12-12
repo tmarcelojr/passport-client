@@ -51,19 +51,18 @@ function App() {
 			url: 'https://b-passport.herokuapp.com/login'
 			// url: 'http://localhost:4000/login'
 		}).then((res) => {
-      console.log(res)
+      console.log('trying to grab just our res', res.data)
       // create logic to change state to properly re-render component
       // only run if successful
       if (res.status === 200) {
         setLoginUsername('')
         setLoginPassword('')
-        getUser(res)
+        getUser()
       }
     });
   };
   
-  const getUser = (res) => {
-    console.log('we in res', res)
+  const getUser = () => {
     axios({
       method: 'GET',
       withCredentials: true,
