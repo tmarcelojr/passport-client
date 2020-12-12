@@ -66,8 +66,8 @@ function App() {
     axios({
       method: 'GET',
       withCredentials: true,
-      // url: 'https://b-passport.herokuapp.com/user'
-      url: 'http://localhost:4000/user'
+      url: 'https://b-passport.herokuapp.com/user'
+      // url: 'http://localhost:4000/user'
     }).then((res) => setLoggedInUser(res.data.username));
   }
 
