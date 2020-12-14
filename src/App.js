@@ -9,16 +9,16 @@ function App() {
 	const [ loginPassword, setLoginPassword ] = useState('');
   const [ loggedInUser, setLoggedInUser ] = useState('');
   
-  useEffect(() => {
-    // Check logged in user in useEffect to be able to use it for logic 
-    // even when you refresh the page you will see current user logged in
-    axios({
-      method: 'GET',
-      withCredentials: true,
-      url: 'https://b-passport.herokuapp.com/user'
-      // url: 'http://localhost:4000/user'
-    }).then((res) => setLoggedInUser(res.data.username));
-  }, [])
+  // useEffect(() => {
+  //   // Check logged in user in useEffect to be able to use it for logic 
+  //   // even when you refresh the page you will see current user logged in
+  //   axios({
+  //     method: 'GET',
+  //     withCredentials: true,
+  //     url: 'https://b-passport.herokuapp.com/user'
+  //     // url: 'http://localhost:4000/user'
+  //   }).then((res) => setLoggedInUser(res.data.username));
+  // }, [])
 
 	const register = () => {
 		axios({
@@ -68,10 +68,7 @@ function App() {
       withCredentials: true,
       url: 'https://b-passport.herokuapp.com/user',
       // url: 'http://localhost:4000/user'
-    }).then((res) => {
-      console.log('in getUser', res)
-      setLoggedInUser(res.data.username)
-    });
+    }).then((res) => res.json()).then(data => console.log('getting user', data))
   }
 
 	const logout = () => {
