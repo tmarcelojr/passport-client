@@ -12,13 +12,12 @@ function App() {
   useEffect(() => {
     // Check logged in user in useEffect to be able to use it for logic 
     // even when you refresh the page you will see current user logged in
-    // axios({
-    //   method: 'GET',
-    //   withCredentials: true,
-    //   url: 'https://b-passport.herokuapp.com/user'
-    //   // url: 'http://localhost:4000/user'
-    // }).then((res) => setLoggedInUser(res.data.username));
-    setLoggedInUser()
+    axios({
+      method: 'GET',
+      withCredentials: true,
+      url: 'https://b-passport.herokuapp.com/user'
+      // url: 'http://localhost:4000/user'
+    }).then((res) => setLoggedInUser(res.data.username));
   }, [])
 
 	const register = () => {
