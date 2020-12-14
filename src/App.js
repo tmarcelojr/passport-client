@@ -58,22 +58,21 @@ function App() {
       if (res.status === 200) {
         setLoginUsername('')
         setLoginPassword('')
-        // getUser(res.data)
-        setLoggedInUser(res.data.username)
+        getUser()
       }
     });
   };
   
-  const getUser = (data) => {
-    // axios({
-    //   method: 'GET',
-    //   withCredentials: true,
-    //   url: 'https://b-passport.herokuapp.com/user',
-    //   // url: 'http://localhost:4000/user'
-    // }).then((res) => {
-    //   console.log('in getUser', res)
-    //   setLoggedInUser(res.data.username)
-    // });
+  const getUser = () => {
+    axios({
+      method: 'GET',
+      withCredentials: true,
+      url: 'https://b-passport.herokuapp.com/user',
+      // url: 'http://localhost:4000/user'
+    }).then((res) => {
+      console.log('in getUser', res)
+      setLoggedInUser(res.data.username)
+    });
   }
 
 	const logout = () => {
